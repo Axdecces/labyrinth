@@ -1,4 +1,4 @@
-#Plan
+# Plan
 
 what my game should do:
 - player has to reach a special point of the labyrinth by finding a path
@@ -7,19 +7,19 @@ what my game should do:
 
 
 
-##game
+## game
 
 - game loop
 - scene manager
 - level manager
 - tiles (16x16)
 
-##specs
+## specs
 
 - tiles (16x16)
 - square (20x20 tiles)
 
-##objects
+## objects
 
 - character
 - background
@@ -28,7 +28,7 @@ what my game should do:
     - square
 
 
-##sprites
+## sprites
 ### squares filled with color
 
 - character
@@ -41,7 +41,7 @@ what my game should do:
     - darker grey
     
 
-##classes
+## classes
 
 - scene manager
     - level manager

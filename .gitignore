@@ -100,5 +100,5 @@ ENV/
 # mypy
 .mypy_cache/
 
-# pychamr files
+# pycharm files
 .idea

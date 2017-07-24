@@ -104,3 +104,4 @@ ENV/
 .idea
 
 # Compiled Python files
+.cpython-36.pyc

@@ -105,3 +105,6 @@ ENV/
 
 # Compiled Python files
 .cpython-36.pyc
+
+#Compiled Python files
+.pyc

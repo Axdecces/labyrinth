@@ -1,3 +1,5 @@
 # labyrinth
 
-just doing things
+ESCAPE ends the game
+
+You can move with WASD or the Arrow Keys

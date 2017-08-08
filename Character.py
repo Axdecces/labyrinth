@@ -1,10 +1,12 @@
 from Rectangle import Rectangle
+from Map import Map
 import pygame
 
 class Character():
     def __init__(self, game, position):
         self.game = game
         self.init(position)
+        self.map = Map(game)
 
     def init(self, position):
         self.position = position
@@ -22,18 +24,29 @@ class Character():
         if self.rect.y > self.game.height:
             self.rect.y = self.game.height
 
-
     def move_up(self):
-        self.rect.move_ip(0, -self.velocity_y)
+        if self.map.tile_map[int(self.rect.y / 16 - 1)][int(self.rect.x / 16)] == 128:
+            self.game.scene_manager.set_scene('Win')
+        if self.map.tile_map[int(self.rect.y / 16 - 1)][int(self.rect.x / 16)] != 0:
+            self.rect.move_ip(0, -self.velocity_y)
 
     def move_down(self):
-        self.rect.move_ip(0, self.velocity_y)
+        if self.map.tile_map[int(self.rect.y / 16 + 1)][int(self.rect.x / 16)] == 128:
+            self.game.scene_manager.set_scene('Win')
+        if self.map.tile_map[int(self.rect.y / 16 + 1)][int(self.rect.x / 16)] != 0:
+            self.rect.move_ip(0, self.velocity_y)
 
     def move_left(self):
-        self.rect.move_ip(-self.velocity_x, 0)
+        if self.map.tile_map[int(self.rect.y / 16)][int(self.rect.x / 16) - 1] == 128:
+            self.game.scene_manager.set_scene('Win')
+        if self.map.tile_map[int(self.rect.y / 16)][int(self.rect.x / 16) - 1] != 0:
+            self.rect.move_ip(-self.velocity_x, 0)
 
     def move_right(self):
-        self.rect.move_ip(self.velocity_x, 0)
+        if self.map.tile_map[int(self.rect.y / 16)][int(self.rect.x / 16) + 1] == 128:
+            self.game.scene_manager.set_scene('Win')
+        if self.map.tile_map[int(self.rect.y / 16)][int(self.rect.x / 16) + 1] != 0:
+            self.rect.move_ip(self.velocity_x, 0)
 
     def move_direction(self, events):
         for event in events:

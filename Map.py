@@ -1,6 +1,6 @@
 import pygame
-from Rectangle import Rectangle
 from PIL import Image
+
 
 class Map():
     def __init__(self, game):
@@ -9,20 +9,19 @@ class Map():
         self.floor = 255
         self.grey = 128
         self.colors = {
-            0 : (150, 150, 150),
-            255 : (200, 200, 200),
-            128 : (100, 100, 100)
+            0: (150, 150, 150),
+            255: (200, 200, 200),
+            128: (100, 100, 100)
         }
         self.im = Image.open('assets/maps/map_1.png')
         self.pix = self.im.load()
 
         self.raw_data = list(self.im.getdata())
 
-
         self.tile_map = []
 
         for pixel in range(self.im.width):
-            self.tile_map.append(self.raw_data[pixel*self.im.width:(pixel + 1)* self.im.width])
+            self.tile_map.append(self.raw_data[pixel * self.im.width:(pixel + 1) * self.im.width])
 
         self.tile_size = 16
         self.map_width = 40

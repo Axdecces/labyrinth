@@ -1,5 +1,4 @@
 from Rectangle import Rectangle
-import pygame
 
 class Wall():
     def __init__(self, game, position):

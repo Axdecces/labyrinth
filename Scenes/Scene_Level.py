@@ -1,7 +1,6 @@
 from Scene import Scene
 from Character import Character
 from Map import Map
-import pygame
 
 class Scene_Level(Scene):
     def __init__(self, game):
